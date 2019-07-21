@@ -34,3 +34,5 @@ cause side effects (AJAX calls etc.) but dont call setState
 
 componentWillUnmount() to unregister any global/system/library events, destroy 3rd party UI library elements, etc. If we don't take the time to remove events we can create memory leaks in our system or leave bad references laying around.
 
+
+https://developmentarc.gitbooks.io/react-indepth/content/life_cycle/the_life_cycle_recap.html
