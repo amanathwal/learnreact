@@ -14,5 +14,20 @@ We shouldn't call setState(), query the Native UI or anything else that can muta
 DOM nodes and refs
 
 
-=======================
-    
+======================= . Updating Lifecycle phases ========
+
+1. componentWillReceiveProps(nextProps) Before our component does anything with the new props, componentWillReceiveProps is called, with the next props as the argument.
+   Most Common Use Case: Acting on particular prop changes to trigger state transitions.
+   
+2. shouldComponentUpdate(nextProps, nextState): returns a boolean, if returned true, render method wont be called
+
+3. componentWillUpdate(nextProps, nextState): componentWillUpdate() is called every time a re-render is required, such as when this.setState() is called
+    dont call setState here.
+
+4. render 
+
+5. componentDidUpdate(prevProps, prevState ): Once again, we can access the Native UI stack, interact with our refs and if required start another re-render/update
+
+========= Death/Unmount In-depth======
+
+componentWillUnmount() to unregister any global/system/library events, destroy 3rd party UI library elements, etc. If we don't take the time to remove events we can create memory leaks in our system or leave bad references laying around.
