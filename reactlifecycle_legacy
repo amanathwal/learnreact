@@ -1,0 +1,18 @@
+For Component Mounting 
+
+1. constructor(props)
+
+2. componentWillMount() : This method is only called one time, which is before the initial render.
+    it is called before render(). You can handle configurations here. You dont have access to 
+    DOM and refs here so nothing much that can be done here, Don’t call setStat, use default state instead.
+    DON'T cause any side effects
+    
+3. render : returns jsx based on state/props, compares it to virtual DOM and then touches the DOM as needed.
+We shouldn't call setState(), query the Native UI or anything else that can mutate the existing state of the application.
+
+4. componentDidMount: componentDidMount() is the last step in mouting lifecycle phase. you can cause side effects also work with 
+DOM nodes and refs
+
+
+=======================
+    
